@@ -1,1 +1,7 @@
 target/
+
+/.settings
+/.classpath
+/.project
+
+/.sass-cache
