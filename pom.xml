@@ -1,5 +1,5 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.mprins.sample</groupId>
 	<artifactId>maven-compass-example</artifactId>
@@ -57,7 +57,7 @@
 			<plugin>
 				<groupId>org.jasig.maven</groupId>
 				<artifactId>sass-maven-plugin</artifactId>
-				<version>1.0.2</version>
+				<version>1.0.3-SNAPSHOT</version>
 				<executions>
 					<execution>
 						<phase>process-sources</phase>
@@ -67,17 +67,29 @@
 					</execution>
 				</executions>
 				<configuration>
+					<!-- 1.0.2 config -->
 					<baseOutputDirectory>${project.build.directory}/${project.build.finalName}/css</baseOutputDirectory>
 					<sassSourceDirectory>${basedir}/src/main</sassSourceDirectory>
-					<useCompass>true</useCompass>
 					<sassOptions>
 						<always_update>true</always_update>
 						<style>${sass.OutputStyle}</style>
 						<debug_info>${debug}</debug_info>
 					</sassOptions>
+					<!-- 1.0.3-SNAPSHOT config-->
+					<useCompass>true</useCompass>
+					<resources>
+						<resource>
+							<source>
+								<directory>${basedir}/src/main/scss</directory>
+								<includes>
+									<include>*.scss</include>
+								</includes>
+							</source>
+							<destination>${project.build.directory}/${project.build.finalName}/css</destination>
+						</resource>
+					</resources>
 				</configuration>
 			</plugin>
-			 
 			<plugin>
 				<groupId>net.alchim31.maven</groupId>
 				<artifactId>yuicompressor-maven-plugin</artifactId>
@@ -167,7 +179,7 @@
 		<pluginManagement>
 			<plugins>
 				<!--This plugin's configuration is used to store Eclipse m2e settings 
-					only. It has no influence on the Maven build itself. -->
+				only. It has no influence on the Maven build itself. -->
 				<plugin>
 					<groupId>org.eclipse.m2e</groupId>
 					<artifactId>lifecycle-mapping</artifactId>
