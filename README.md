@@ -35,3 +35,8 @@ This compiles the whole webapp.
 
 ```mvn jetty:run```
 
+## Compiling with Ruby
+
+(this requires the Compass gem to be installed obviously)
+
+```ruby sass_script.rb```
