@@ -1,3 +1,7 @@
+# THIS IS THE compass CONFIGURATION FILE
+# it is automatically looked for by compass
+
+
 # Require any additional compass plugins here.
 
 
