@@ -52,8 +52,7 @@
 		<finalName>compass-example</finalName>
 		<defaultGoal>compile</defaultGoal>
 		<plugins>
-			<!-- this will fail because Compass is currently not supported by this plugin,
-			note the tentative useCompass config param below -->
+			<!-- this may fail until Compass is supported by this plugin -->
 			<plugin>
 				<groupId>org.jasig.maven</groupId>
 				<artifactId>sass-maven-plugin</artifactId>
@@ -67,15 +66,15 @@
 					</execution>
 				</executions>
 				<configuration>
-					<!-- 1.0.2 config -->
-					<baseOutputDirectory>${project.build.directory}/${project.build.finalName}/css</baseOutputDirectory>
-					<sassSourceDirectory>${basedir}/src/main</sassSourceDirectory>
 					<sassOptions>
 						<always_update>true</always_update>
 						<style>${sass.OutputStyle}</style>
 						<debug_info>${debug}</debug_info>
 					</sassOptions>
-					<!-- 1.0.3-SNAPSHOT config-->
+					<!-- 1.0.2 config -->
+					<baseOutputDirectory>${project.build.directory}/${project.build.finalName}/css</baseOutputDirectory>
+					<sassSourceDirectory>${basedir}/src/main</sassSourceDirectory>
+					<!-- new 1.0.3-SNAPSHOT config-->
 					<useCompass>true</useCompass>
 					<resources>
 						<resource>
@@ -84,6 +83,7 @@
 								<includes>
 									<include>*.scss</include>
 								</includes>
+								<excludes />
 							</source>
 							<destination>${project.build.directory}/${project.build.finalName}/css</destination>
 						</resource>
