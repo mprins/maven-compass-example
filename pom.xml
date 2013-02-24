@@ -86,8 +86,7 @@
 								</includes>
 								<excludes />
 							</source>
-							<!-- needs to be a (POM) relative path -->
-							<destination>target/${project.build.finalName}/css</destination>
+							<destination>${project.build.directory}/${project.build.finalName}/css</destination>
 						</resource>
 					</resources>
 				</configuration>
