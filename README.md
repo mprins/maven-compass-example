@@ -12,19 +12,6 @@ https://github.com/Jasig/sass-maven-plugin/issues/10
 
 ![WTFPL](http://www.wtfpl.net/wp-content/uploads/2012/12/wtfpl-badge-1.png)
 
-
-## Compiling with compass
-
-This just compiles the stylesheet.
-
-```compass compile```
-
-##Compiling with Sass
-
-This just compiles the stylesheet.
-
-```sass --compass -f -g --update src\main\scss\compiled.scss:target\compass-example\css\compiled.css```
-
 ##Compiling with Maven
 
 This compiles the whole webapp.
@@ -34,9 +21,3 @@ This compiles the whole webapp.
 ##Running with Maven
 
 ```mvn jetty:run```
-
-## Compiling with Ruby
-
-(this requires the Compass gem to be installed obviously)
-
-```ruby sass_script.rb```
