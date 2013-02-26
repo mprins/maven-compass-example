@@ -71,11 +71,6 @@
 						<style>${sass.OutputStyle}</style>
 						<debug_info>${debug}</debug_info>
 					</sassOptions>
-					<!-- 1.0.2 config 
-					<baseOutputDirectory>${project.build.directory}/${project.build.finalName}/css</baseOutputDirectory>
-					<sassSourceDirectory>${basedir}/src/main</sassSourceDirectory>
-					-->
-					<!-- new 1.0.3-SNAPSHOT config-->
 					<useCompass>true</useCompass>
 					<resources>
 						<resource>
