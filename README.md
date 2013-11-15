@@ -21,3 +21,7 @@ This compiles the whole webapp.
 ##Running with Maven
 
 ```mvn jetty:run```
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/mprins/maven-compass-example/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
