@@ -1,5 +1,7 @@
 language: java
-script: mvn test
+before_install:
+  - unset GEM_PATH
+script: mvn -e verify
 jdk:
   - oraclejdk7
   - openjdk7
