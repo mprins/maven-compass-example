@@ -1,5 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.mprins.sample</groupId>
 	<artifactId>maven-compass-example</artifactId>
@@ -47,6 +46,7 @@
 		<jdk.version>1.7</jdk.version>
 		<debug>true</debug>
 		<sass.OutputStyle>:expanded</sass.OutputStyle>
+		<sass-maven-plugin.version>2.3</sass-maven-plugin.version>
 	</properties>
 	<build>
 		<finalName>compass-example</finalName>
@@ -58,29 +58,29 @@
 				<version>1.8</version>
 				<executions>
 					<execution>
-                                            <id>createDirecories</id>
-                                            <phase>process-sources</phase>
-                                            <goals>
-                                                    <goal>run</goal>
-                                            </goals>
-                                            <configuration>
-                                                        <target>
-                                                                <!-- YUI compressor needs this -->
-                                                                <mkdir dir="${project.build.directory}/${project.build.finalName}/js" />
-                                                        </target>
-                                            </configuration>
+						<id>createDirecories</id>
+						<phase>process-sources</phase>
+						<goals>
+							<goal>run</goal>
+						</goals>
+						<configuration>
+							<target>
+								<!-- YUI compressor needs this to exist -->
+								<mkdir dir="${project.build.directory}/${project.build.finalName}/js" />
+							</target>
+						</configuration>
 					</execution>
 				</executions>
 			</plugin>
 			<plugin>
 				<groupId>nl.geodienstencentrum.maven</groupId>
 				<artifactId>sass-maven-plugin</artifactId>
-				<version>2.2</version>
+				<version>${sass-maven-plugin.version}</version>
 				<executions>
 					<execution>
-						<phase>process-sources</phase>
 						<goals>
 							<goal>update-stylesheets</goal>
+							<goal>scss-lint</goal>
 						</goals>
 					</execution>
 				</executions>
@@ -94,7 +94,7 @@
 					<resources>
 						<resource>
 							<source>
-								<directory>src/main/scss</directory>
+								<directory>${basedir}/src/main/scss</directory>
 								<includes>
 									<include>*.scss</include>
 								</includes>
@@ -140,7 +140,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
-				<version>2.5</version>
+				<version>2.6</version>
 				<configuration>
 					<warSourceExcludes>**/*.html,**/css/*.css,**/js/*.js</warSourceExcludes>
 					<archive>
@@ -181,13 +181,31 @@
 							<resourcesAsCSV>src/main/webapp,target/compass-example</resourcesAsCSV>
 						</baseResource>
 						<sessionHandler implementation="org.eclipse.jetty.server.session.SessionHandler">
-							<sessionManager
-								implementation="org.eclipse.jetty.server.session.HashSessionManager">
+							<sessionManager implementation="org.eclipse.jetty.server.session.HashSessionManager">
 								<usingCookies>false</usingCookies>
 							</sessionManager>
 						</sessionHandler>
 					</webAppConfig>
 					<reload>manual</reload>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-site-plugin</artifactId>
+				<version>3.4</version>
+				<configuration>
+					<reportPlugins>
+						<plugin>
+							<groupId>nl.geodienstencentrum.maven</groupId>
+							<artifactId>sass-maven-plugin</artifactId>
+							<version>${sass-maven-plugin.version}</version>
+
+							<configuration>
+								<sassSourceDirectory>${basedir}/src/main/scss</sassSourceDirectory>
+							</configuration>
+
+						</plugin>
+					</reportPlugins>
 				</configuration>
 			</plugin>
 		</plugins>
