@@ -194,16 +194,40 @@
 				<artifactId>maven-site-plugin</artifactId>
 				<version>3.4</version>
 				<configuration>
+					<generateSitemap>true</generateSitemap>
+					<locales>en</locales>
+					<outputEncoding>UTF-8</outputEncoding>
 					<reportPlugins>
 						<plugin>
 							<groupId>nl.geodienstencentrum.maven</groupId>
 							<artifactId>sass-maven-plugin</artifactId>
 							<version>${sass-maven-plugin.version}</version>
-
 							<configuration>
 								<sassSourceDirectory>${basedir}/src/main/scss</sassSourceDirectory>
 							</configuration>
-
+						</plugin>
+						<plugin>
+							<groupId>org.apache.maven.plugins</groupId>
+							<artifactId>maven-project-info-reports-plugin</artifactId>
+							<version>2.8</version>
+							<reportSets>
+								<reportSet>
+									<reports>
+										<report>cim</report>
+										<report>dependencies</report>
+										<report>index</report>
+										<report>issue-tracking</report>
+										<report>license</report>
+										<report>plugins</report>
+										<report>project-team</report>
+										<report>scm</report>
+										<report>summary</report>
+									</reports>
+								</reportSet>
+							</reportSets>
+							<configuration>
+								<dependencyLocationsEnabled>true</dependencyLocationsEnabled>
+							</configuration>
 						</plugin>
 					</reportPlugins>
 				</configuration>
