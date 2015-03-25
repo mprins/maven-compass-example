@@ -46,7 +46,7 @@
 		<jdk.version>1.7</jdk.version>
 		<debug>true</debug>
 		<sass.OutputStyle>:expanded</sass.OutputStyle>
-		<sass-maven-plugin.version>2.3</sass-maven-plugin.version>
+		<sass-maven-plugin.version>2.4</sass-maven-plugin.version>
 	</properties>
 	<build>
 		<finalName>compass-example</finalName>
