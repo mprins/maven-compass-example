@@ -1,4 +1,4 @@
-version: {build}
+version: "{build} (branch: {branch})"
 
 clone_folder: C:\projects\maven-compass-example
 
@@ -12,7 +12,7 @@ install:
 
 cache:
 - C:\Users\appveyor\.m2\repository
-- C:\bin\apache-maven-3.2.5
+- C:\bin\apache-maven-%MVN_VERSION%
 
 build_script:
 - cd C:\projects\maven-compass-example
