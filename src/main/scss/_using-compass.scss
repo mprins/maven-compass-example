@@ -1,7 +1,7 @@
 /* this is just here to demonstrate the use of Compass using the example from 
 	http://compass-style.org/help/tutorials/exclude_vendor_prefixes/ */
 
-@import 'compass/css3';
+@import "compass/css3";
 
 /* prevent use of ms- prefixes */
 $experimental-support-for-microsoft: false;
