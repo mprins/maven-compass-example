@@ -46,8 +46,21 @@
 		<jdk.version>1.7</jdk.version>
 		<debug>true</debug>
 		<sass.OutputStyle>:expanded</sass.OutputStyle>
-		<sass-maven-plugin.version>2.6</sass-maven-plugin.version>
-	</properties>
+        <sass-maven-plugin.version>2.6</sass-maven-plugin.version>
+        <jruby.version>1.7.20.1</jruby.version>
+    </properties>
+    <profiles>
+        <profile>
+            <activation>
+                <os>
+                    <family>windows</family>
+                </os>
+            </activation>
+            <properties>
+                <jruby.version>1.7.10</jruby.version>
+            </properties>
+        </profile>
+    </profiles>
 	<build>
 		<finalName>compass-example</finalName>
 		<defaultGoal>compile</defaultGoal>
@@ -104,6 +117,13 @@
 						</resource>
 					</resources>
 				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>org.jruby</groupId>
+						<artifactId>jruby-complete</artifactId>
+                        <version>${jruby.version}</version>
+					</dependency>
+				</dependencies>
 			</plugin>
 			<plugin>
 				<groupId>net.alchim31.maven</groupId>
