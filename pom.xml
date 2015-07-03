@@ -46,7 +46,7 @@
 		<jdk.version>1.7</jdk.version>
 		<debug>true</debug>
 		<sass.OutputStyle>:expanded</sass.OutputStyle>
-        <sass-maven-plugin.version>2.6</sass-maven-plugin.version>
+        <sass-maven-plugin.version>2.7</sass-maven-plugin.version>
         <jruby.version>1.7.20.1</jruby.version>
     </properties>
     <profiles>
