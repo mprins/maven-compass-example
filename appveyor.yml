@@ -4,7 +4,7 @@ clone_folder: C:\projects\maven-compass-example
 
 environment:
   JAVA_HOME: C:\Program Files\Java\jdk1.7.0
-  MVN_VERSION: 3.2.5
+  MVN_VERSION: 3.3.1
 
 install:
 - set PATH=%PATH%;C:\bin\apache-maven-%MVN_VERSION%\bin
