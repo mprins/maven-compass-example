@@ -24,10 +24,7 @@
             <distribution>repo</distribution>
         </license>
     </licenses>
-    <!-- issueManagement>
-    <system>GitHub</system>
-    <url>https://github.com/mprins/maven-compass-example/issues/</url>
-    </issueManagement -->
+    <issueManagement />
     <scm>
         <url>https://github.com/mprins/maven-compass-example</url>
         <connection>scm:git:git@github.com:git://github.com/mprins/maven-compass-example.git</connection>
@@ -61,7 +58,7 @@
         <jdk.version>1.7</jdk.version>
         <debug>true</debug>
         <sass.OutputStyle>:expanded</sass.OutputStyle>
-        <sass-maven-plugin.version>2.15</sass-maven-plugin.version>
+        <sass-maven-plugin.version>2.16</sass-maven-plugin.version>
     </properties>
     <build>
         <finalName>compass-example</finalName>
@@ -169,7 +166,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.3</version>
+                <version>3.5.1</version>
                 <configuration>
                     <debug>${debug}</debug>
                     <optimize>!${debug}</optimize>
@@ -232,7 +229,6 @@
                                         <report>cim</report>
                                         <report>dependencies</report>
                                         <report>index</report>
-                                        <!-- report>issue-tracking</report -->
                                         <report>license</report>
                                         <report>plugins</report>
                                         <report>project-team</report>
