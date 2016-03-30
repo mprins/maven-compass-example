@@ -59,31 +59,12 @@
         <debug>true</debug>
         <sass.OutputStyle>:expanded</sass.OutputStyle>
         <sass-maven-plugin.version>2.17-SNAPSHOT</sass-maven-plugin.version>
+        <closure-compiler-maven-plugin.version>2.1</closure-compiler-maven-plugin.version>
     </properties>
     <build>
         <finalName>compass-example</finalName>
         <defaultGoal>compile</defaultGoal>
         <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-antrun-plugin</artifactId>
-                <version>1.8</version>
-                <executions>
-                    <execution>
-                        <id>createDirectories</id>
-                        <phase>process-sources</phase>
-                        <goals>
-                            <goal>run</goal>
-                        </goals>
-                        <configuration>
-                            <target>
-                                <!-- YUI compressor needs this to (pre) exist -->
-                                <mkdir dir="${project.build.directory}/${project.build.finalName}/js" />
-                            </target>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
             <plugin>
                 <groupId>nl.geodienstencentrum.maven</groupId>
                 <artifactId>sass-maven-plugin</artifactId>
@@ -118,36 +99,32 @@
                 </configuration>
             </plugin>
             <plugin>
-                <groupId>net.alchim31.maven</groupId>
-                <artifactId>yuicompressor-maven-plugin</artifactId>
-                <version>1.5.1</version>
+                <groupId>nl.geodienstencentrum.maven</groupId>
+                <artifactId>closure-compiler-maven-plugin</artifactId>
+                <version>${closure-compiler-maven-plugin.version}</version>
                 <executions>
                     <execution>
-                        <phase>process-classes</phase>
                         <goals>
-                            <goal>compress</goal>
+                            <goal>compile</goal>
                         </goals>
-                        <configuration>
-                            <force>true</force>
-                            <nosuffix>true</nosuffix>
-                            <failOnWarning>false</failOnWarning>
-                            <nocompress>${debug}</nocompress>
-                            <excludes>
-                                <exclude>**/*.css</exclude>
-                            </excludes>
-                            <outputDirectory>${project.build.directory}/${project.build.finalName}/js</outputDirectory>
-                            <aggregations>
-                                <aggregation>
-                                    <includes>
-                                        <include>**/index.js</include>
-                                    </includes>
-                                    <output>${project.build.directory}/${project.build.finalName}/js/compiled.js</output>
-                                    <removeIncluded>true</removeIncluded>
-                                </aggregation>
-                            </aggregations>
-                        </configuration>
                     </execution>
                 </executions>
+                <configuration>
+                    <compilations>
+                        <compilation>
+                            <compilationLevel>WHITESPACE_ONLY</compilationLevel>
+                            <compilerOptions>
+                                <prettyPrint>${debug}</prettyPrint>
+                                <runtimeTypeCheck>true</runtimeTypeCheck>
+                            </compilerOptions>
+                            <externFiles />
+                            <sourceFiles>
+                                <param>${basedir}/src/main/js/index.js</param>
+                           </sourceFiles>
+                           <outputFile>${project.build.directory}/${project.build.finalName}/js/compiled.js</outputFile>
+                       </compilation>
+                    </compilations>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
