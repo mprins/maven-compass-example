@@ -55,11 +55,11 @@
     </prerequisites>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <jdk.version>1.7</jdk.version>
+        <jdk.version>1.8</jdk.version>
         <debug>true</debug>
         <sass.OutputStyle>:expanded</sass.OutputStyle>
-        <sass-maven-plugin.version>2.17</sass-maven-plugin.version>
-        <closure-compiler-maven-plugin.version>2.1</closure-compiler-maven-plugin.version>
+        <sass-maven-plugin.version>2.18</sass-maven-plugin.version>
+        <closure-compiler-maven-plugin.version>2.2</closure-compiler-maven-plugin.version>
     </properties>
     <build>
         <finalName>compass-example</finalName>
@@ -181,7 +181,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-site-plugin</artifactId>
-                <version>3.5</version>
+                <version>3.5.1</version>
                 <configuration>
                     <generateSitemap>true</generateSitemap>
                     <locales>en</locales>
