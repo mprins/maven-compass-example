@@ -58,7 +58,7 @@
         <jdk.version>1.8</jdk.version>
         <debug>true</debug>
         <sass.OutputStyle>:expanded</sass.OutputStyle>
-        <sass-maven-plugin.version>2.18</sass-maven-plugin.version>
+        <sass-maven-plugin.version>2.20-SNAPSHOT</sass-maven-plugin.version>
         <closure-compiler-maven-plugin.version>2.2</closure-compiler-maven-plugin.version>
     </properties>
     <build>
