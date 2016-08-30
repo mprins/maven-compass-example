@@ -28,5 +28,5 @@ cache:
 - C:\maven -> appveyor.yml
 
 build_script:
-- cd C:\projects\maven-compass-example
+- C:\projects\maven-compass-example
 - mvn -e -fae install site
