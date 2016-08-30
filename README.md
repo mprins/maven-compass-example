@@ -2,11 +2,13 @@
 
 Example/Testcase java webapp using Maven, Sass and Compass.
 
-[![Build Status](https://travis-ci.org/mprins/maven-compass-example.svg?branch=master)](https://travis-ci.org/mprins/maven-compass-example)
-
-[![Build status](https://ci.appveyor.com/api/projects/status/27a2fsi72a4rke53/branch/master?svg=true)](https://ci.appveyor.com/project/mprins/maven-compass-example/branch/master)
-
+[![Linux Build Status](https://travis-ci.org/mprins/maven-compass-example.svg?branch=master)](https://travis-ci.org/mprins/maven-compass-example)
+[![Windows Build status](https://ci.appveyor.com/api/projects/status/27a2fsi72a4rke53/branch/master?svg=true)](https://ci.appveyor.com/project/mprins/maven-compass-example/branch/master)
 ![WTFPL](http://www.wtfpl.net/wp-content/uploads/2012/12/wtfpl-badge-1.png)
+[![GitHub issues](https://img.shields.io/github/issues/mprins/maven-compass-example.svg)](https://github.com/mprins/maven-compass-example/issues)
+[![GitHub forks](https://img.shields.io/github/forks/mprins/maven-compass-example.svg)](https://github.com/mprins/maven-compass-example/network)
+[![GitHub stars](https://img.shields.io/github/stars/mprins/maven-compass-example.svg)](https://github.com/mprins/maven-compass-example/stargazers)
+
 
 ## Compiling with Maven
 
