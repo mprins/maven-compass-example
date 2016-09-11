@@ -6,27 +6,17 @@ environment:
 
   matrix:
     - JAVA_HOME: C:\Program Files\Java\jdk1.8.0
+    - JAVA_HOME: C:\Program Files (x86)\Java\jdk1.8.0
 
 install:
-  - ps: >-
-      Add-Type -AssemblyName System.IO.Compression.FileSystem
-          if (!(Test-Path -Path "C:\maven" )) {
-            (new-object System.Net.WebClient).DownloadFile(
-              'https://www-eu.apache.org/dist/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.zip',
-              'C:\maven-bin.zip'
-            )
-            [System.IO.Compression.ZipFile]::ExtractToDirectory("C:\maven-bin.zip", "C:\maven")
-          }
-  - SET PATH=C:\maven\apache-maven-3.3.9\bin;%JAVA_HOME%\bin;%PATH%
   - echo %PATH%
+  - echo %M2_HOME%
   - java -version
-  - cd C:\projects\closure-compiler-maven-plugin
   - mvn -X -v
-  
+
 cache:
-- C:\Users\appveyor\.m2\repository -> pom.xml
-- C:\maven -> appveyor.yml
+  - C:\Users\appveyor\.m2\repository -> pom.xml
 
 build_script:
-- C:\projects\maven-compass-example
-- mvn -e -fae install site
+  - cd C:\projects\maven-compass-example
+  - mvn -e -fae install site
