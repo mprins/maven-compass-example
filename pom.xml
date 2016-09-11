@@ -58,7 +58,7 @@
         <jdk.version>1.8</jdk.version>
         <debug>true</debug>
         <sass.OutputStyle>:expanded</sass.OutputStyle>
-        <sass-maven-plugin.version>2.20</sass-maven-plugin.version>
+        <sass-maven-plugin.version>2.21</sass-maven-plugin.version>
         <closure-compiler-maven-plugin.version>2.4</closure-compiler-maven-plugin.version>
     </properties>
     <build>
@@ -227,9 +227,7 @@
                 <version>0.12</version>
                 <configuration>
                     <message>Site update for version ${project.version} (rev. ${git.revision})</message>
-                    <password>${github.password}</password>
-                    <userName>${github.username}</userName>
-                    <host>api.github.com</host>
+                    <server>github</server>
                     <force>false</force>
                     <noJekyll>true</noJekyll>
                 </configuration>
