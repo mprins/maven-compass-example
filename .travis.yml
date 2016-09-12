@@ -6,7 +6,9 @@ env:
   global:
     - secure: "m3SDmm4eeTd0n4IeraLOtsvPisCyepmMgW/pgx7tvpxrFoGaHJjXiYC4uj50nktIzkbe899HZBsCwd+G3HD7EmgvksBqIwT3FFSh4fwCrvdFMGxZ2i/E6vd2yNhucb+EbXu7OtCWvVzmKjbkORxTljOra7paXV0DRxbVbEss+As="
 
-script: mvn -e -fae -B install site
+script: 
+  - mvn -V -e -fae -B install
+  - mvn -V -e -fae -B site
 
 jdk:
   - oraclejdk8
@@ -18,7 +20,7 @@ cache:
 after_success:
   - if [ "$TRAVIS_REPO_SLUG" == "mprins/maven-compass-example" ] &&
        [ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_BRANCH" == "master" ]; then
-          mvn -e -fae -B compile site-deploy;
+          mvn -e -fae -B compile site-deploy --settings .travis/settings.xml;
     else
           echo -n "not deploying maven site";
     fi

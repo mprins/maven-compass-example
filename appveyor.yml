@@ -11,4 +11,4 @@ cache:
 
 build_script:
   - cd C:\projects\maven-compass-example
-  - mvn -v -e -fae install site
+  - mvn -V -e -fae install site
