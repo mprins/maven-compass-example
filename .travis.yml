@@ -4,7 +4,7 @@ sudo: false
 
 env:
   global:
-    - secure: "m3SDmm4eeTd0n4IeraLOtsvPisCyepmMgW/pgx7tvpxrFoGaHJjXiYC4uj50nktIzkbe899HZBsCwd+G3HD7EmgvksBqIwT3FFSh4fwCrvdFMGxZ2i/E6vd2yNhucb+EbXu7OtCWvVzmKjbkORxTljOra7paXV0DRxbVbEss+As="
+    - secure: "ZUWmLfRxoNhxg6YQDRirZYHcv7OH6EKpgQJpRWoxsF1MMNTlnH7XMkiev3d0J5lppe00gi8Guf90XNGHcfe9X/125cYiMQSjRRt6PkiYL8og8+lip4HDfihuXN2h6BcRrBZ7dm5izeSGVzw0GEg0yyav0oqoqLpyzQaZssjXgDY="
 
 script: 
   - mvn -V -e -fae -B install
