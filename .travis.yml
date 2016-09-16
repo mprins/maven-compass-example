@@ -18,7 +18,7 @@ cache:
   - $HOME/.m2
 
 after_success:
-  - if[ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_BRANCH" == "master" ]; then
+  - if [ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_BRANCH" == "master" ]; then
           mvn -e -fae -B compile site-deploy --settings .travis/settings.xml;
     else
           echo -n "not deploying maven site";
