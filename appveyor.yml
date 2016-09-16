@@ -1,18 +1,22 @@
 version: "{build} ({branch})"
 
 shallow_clone: true
+skip_tags: true
+clone_folder: C:\projects\maven-compass-example
 
 environment:
+
   matrix:
     - JAVA_HOME: C:\Program Files\Java\jdk1.8.0
-    
+
 install: 
   - echo %PATH%
   - echo %M2_HOME%
   - mvn -X -v
 
+build_script:
+  - cd C:\projects\maven-compass-example
+  - mvn -V -e -fae install site
+
 cache:
   - C:\Users\appveyor\.m2\repository -> pom.xml
-
-build_script:
-  - mvn -V -e -fae install site
