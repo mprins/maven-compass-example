@@ -58,8 +58,8 @@
         <jdk.version>1.8</jdk.version>
         <debug>true</debug>
         <sass.OutputStyle>:expanded</sass.OutputStyle>
-        <sass-maven-plugin.version>2.22</sass-maven-plugin.version>
-        <closure-compiler-maven-plugin.version>2.5</closure-compiler-maven-plugin.version>
+        <sass-maven-plugin.version>2.24</sass-maven-plugin.version>
+        <closure-compiler-maven-plugin.version>2.6</closure-compiler-maven-plugin.version>
     </properties>
     <build>
         <finalName>compass-example</finalName>
@@ -129,7 +129,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
-                <version>3.0.0</version>
+                <version>3.1.0</version>
                 <configuration>
                     <warSourceExcludes>**/*.html,**/css/*.css,**/js/*.js</warSourceExcludes>
                     <archive>
