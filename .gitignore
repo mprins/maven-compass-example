@@ -1,7 +1,7 @@
 target/
-
+*.iml
 /.settings
 /.classpath
 /.project
-
+.idea/
 /.sass-cache

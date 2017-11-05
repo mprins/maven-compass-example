@@ -1,0 +1,9 @@
+/* this is just here to demonstrate the use of Bourbon */
+
+@import 'bourbon';
+
+.rounded {
+	@include border-top-radius(4px);
+	@include border-bottom-radius(4px);
+	box-shadow: 2px 2px 10px $BlueColourTransp;
+}
