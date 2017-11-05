@@ -1,6 +1,6 @@
 # maven-compass-example
 
-Example/Testcase java webapp using Maven, Sass and Compass.
+Example/Testcase java webapp using Maven, Sass and Bourbon.
 
 [![Linux Build Status](https://travis-ci.org/mprins/maven-compass-example.svg?branch=master)](https://travis-ci.org/mprins/maven-compass-example)
 [![Windows Build status](https://ci.appveyor.com/api/projects/status/27a2fsi72a4rke53/branch/master?svg=true)](https://ci.appveyor.com/project/mprins/maven-compass-example/branch/master)
