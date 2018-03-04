@@ -187,38 +187,6 @@
                     <locales>en</locales>
                     <outputEncoding>UTF-8</outputEncoding>
                     <skipDeploy>true</skipDeploy>
-                    <reportPlugins>
-                        <plugin>
-                            <groupId>nl.geodienstencentrum.maven</groupId>
-                            <artifactId>sass-maven-plugin</artifactId>
-                            <version>${sass-maven-plugin.version}</version>
-                            <configuration>
-                                <sassSourceDirectory>${basedir}/src/main/scss</sassSourceDirectory>
-                            </configuration>
-                        </plugin>
-                        <plugin>
-                            <groupId>org.apache.maven.plugins</groupId>
-                            <artifactId>maven-project-info-reports-plugin</artifactId>
-                            <version>2.9</version>
-                            <reportSets>
-                                <reportSet>
-                                    <reports>
-                                        <report>cim</report>
-                                        <report>dependencies</report>
-                                        <report>index</report>
-                                        <report>license</report>
-                                        <report>plugins</report>
-                                        <report>project-team</report>
-                                        <report>scm</report>
-                                        <report>summary</report>
-                                    </reports>
-                                </reportSet>
-                            </reportSets>
-                            <configuration>
-                                <dependencyLocationsEnabled>true</dependencyLocationsEnabled>
-                            </configuration>
-                        </plugin>
-                    </reportPlugins>
                 </configuration>
             </plugin>
             <plugin>
@@ -226,7 +194,7 @@
                 <artifactId>site-maven-plugin</artifactId>
                 <version>0.12</version>
                 <configuration>
-                    <message>Site update for version ${project.version} (rev. ${git.revision})</message>
+                    <message>Site update for version ${project.version}</message>
                     <server>github</server>
                     <force>false</force>
                     <noJekyll>true</noJekyll>
@@ -242,6 +210,40 @@
             </plugin>
         </plugins>
     </build>
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>nl.geodienstencentrum.maven</groupId>
+                <artifactId>sass-maven-plugin</artifactId>
+                <version>${sass-maven-plugin.version}</version>
+                <configuration>
+                    <sassSourceDirectory>${basedir}/src/main/scss</sassSourceDirectory>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-project-info-reports-plugin</artifactId>
+                <version>2.9</version>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>cim</report>
+                            <report>dependencies</report>
+                            <report>index</report>
+                            <report>license</report>
+                            <report>plugins</report>
+                            <report>project-team</report>
+                            <report>scm</report>
+                            <report>summary</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+                <configuration>
+                    <dependencyLocationsEnabled>true</dependencyLocationsEnabled>
+                </configuration>
+            </plugin>
+        </plugins>
+    </reporting>
     <dependencies>
         <dependency>
             <groupId>javax.servlet.jsp</groupId>
