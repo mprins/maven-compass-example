@@ -1,6 +1,6 @@
 /* this is just here to demonstrate the use of Bourbon */
 
-@import 'bourbon';
+@import "bourbon/bourbon";
 
 .rounded {
 	@include border-top-radius(4px);
