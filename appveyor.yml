@@ -12,11 +12,11 @@ environment:
 install: 
   - echo %PATH%
   - echo %M2_HOME%
-  - mvn -X -v
+  - mvn -X -v -U
 
 build_script:
   - cd C:\projects\maven-compass-example
-  - mvn -V -e -fae install site
+  - mvn -U -V -e -fae install site
 
 cache:
   - C:\Users\appveyor\.m2\repository -> pom.xml
