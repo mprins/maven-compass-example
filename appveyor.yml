@@ -16,7 +16,8 @@ install:
 
 build_script:
   - cd C:\projects\maven-compass-example
-  - mvn -U -V -e -fae install site
+  - mvn -V -e -fae -B install
+  - mvn -V -e -fae -B site
 
 cache:
   - C:\Users\appveyor\.m2\repository -> pom.xml
