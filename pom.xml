@@ -247,7 +247,7 @@
                             <report>ci-management</report>
                             <report>dependencies</report>
                             <report>index</report>
-                            <report>license</report>
+                            <report>licenses</report>
                             <report>plugins</report>
                             <report>team</report>
                         </reports>
