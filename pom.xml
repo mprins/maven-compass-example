@@ -244,7 +244,7 @@
                 <reportSets>
                     <reportSet>
                         <reports>
-                            <report>ci-managment</report>
+                            <report>ci-management</report>
                             <report>dependencies</report>
                             <report>index</report>
                             <report>license</report>
