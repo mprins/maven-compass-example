@@ -244,14 +244,12 @@
                 <reportSets>
                     <reportSet>
                         <reports>
-                            <report>cim</report>
+                            <report>ci-managment</report>
                             <report>dependencies</report>
                             <report>index</report>
                             <report>license</report>
                             <report>plugins</report>
-                            <report>project-team</report>
-                            <report>scm</report>
-                            <report>summary</report>
+                            <report>team</report>
                         </reports>
                     </reportSet>
                 </reportSets>
