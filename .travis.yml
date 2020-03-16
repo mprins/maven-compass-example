@@ -11,7 +11,7 @@ script:
   - mvn -V -e -fae -B site
 
 jdk:
-  - oraclejdk8
+  - openjdk8
 
 cache:
   directories:
