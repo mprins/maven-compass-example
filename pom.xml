@@ -128,7 +128,7 @@
             </plugin>
             <plugin>
                 <artifactId>maven-war-plugin</artifactId>
-                <version>3.2.3</version>
+                <version>3.3.0</version>
                 <configuration>
                     <warSourceExcludes>**/*.html,**/css/*.css,**/js/*.js</warSourceExcludes>
                     <archive>
